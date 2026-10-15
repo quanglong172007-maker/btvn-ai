@@ -1,0 +1,109 @@
+/* ===== BIẾN MÀU & CỠ CHỮ: sửa ở đây là đổi toàn trang ===== */
+:root {
+  --navy: #0B2A5B;       /* xanh đậm chủ đạo */
+  --blue: #1D4E94;       /* xanh vừa cho nút khi rê chuột */
+  --tint: #EEF3FA;       /* xanh rất nhạt làm nền xen kẽ */
+  --text: #1B2433;       /* chữ chính */
+  --white: #FFFFFF;
+}
+
+/* Cài đặt chung */
+* { box-sizing: border-box; }                 /* width tính cả padding, dễ canh bố cục */
+html { scroll-behavior: smooth; scroll-padding-top: 70px; } /* cuộn mượt, chừa chỗ cho thanh menu */
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", Arial, sans-serif; /* Arial là phông dự phòng, cũng hiển thị tốt tiếng Việt */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+}
+.container { width: min(1100px, 92%); margin: 0 auto; } /* khung nội dung canh giữa */
+h1, h2, h3 { color: var(--navy); line-height: 1.25; }
+h2 { font-size: 1.9rem; margin: 0 0 1.5rem; }
+
+/* ===== THANH ĐIỀU HƯỚNG ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 10;      /* dính ở đầu trang khi cuộn */
+  background: var(--navy);
+}
+.header-inner { display: flex; justify-content: space-between; align-items: center; min-height: 64px; }
+.logo { color: var(--white); font-weight: 700; text-decoration: none; }
+.main-nav a { color: var(--white); text-decoration: none; margin-left: 1.5rem; }
+.main-nav a:hover { text-decoration: underline; }
+.menu-toggle { display: none; background: none; border: 0; color: var(--white); font-size: 1.8rem; cursor: pointer; }
+
+/* Hiện thị khi bàn phím được dùng để di chuyển (dễ tiếp cận) */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible { outline: 3px solid #7FB0F0; outline-offset: 2px; }
+
+/* ===== BANNER =====
+   Muốn dùng ảnh thật: lưu ảnh vào images/hero.jpg, lớp màu xanh phía trên giúp chữ vẫn dễ đọc */
+.hero {
+  background-image: linear-gradient(rgba(11, 42, 91, .82), rgba(11, 42, 91, .82)), url("images/hero.jpg");
+  background-color: var(--navy);               /* hiện khi chưa có ảnh */
+  background-size: cover; background-position: center;
+  color: var(--white);
+  padding: 6rem 0;
+}
+.hero h1 { color: var(--white); font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 1rem; } /* clamp: chữ tự co giãn theo màn hình */
+.hero p { font-size: 1.2rem; max-width: 36rem; margin: 0 0 2rem; }
+
+/* ===== NÚT ===== */
+.btn {
+  display: inline-block; padding: .8rem 1.6rem;
+  background: var(--white); color: var(--navy);
+  border: 2px solid var(--navy); border-radius: 6px;
+  font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+}
+.btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.hero .btn { border-color: var(--white); }     /* nút trong banner viền trắng */
+
+/* ===== CÁC PHẦN CHUNG ===== */
+.section { padding: 4.5rem 0; }
+.section-tint { background: var(--tint); }
+.lead { max-width: 42rem; margin: 0; }
+
+/* Lưới thẻ: tự xuống dòng theo độ rộng màn hình, không cần media query */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.card { background: var(--tint); border-left: 4px solid var(--navy); border-radius: 6px; padding: 1.5rem; }
+.card h3 { margin-top: 0; }
+
+/* ===== THƯ VIỆN ẢNH ===== */
+.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.5rem; }
+.filter-btn { padding: .5rem 1.1rem; border: 2px solid var(--navy); border-radius: 999px; background: var(--white); color: var(--navy); font: inherit; cursor: pointer; }
+.filter-btn.active { background: var(--navy); color: var(--white); } /* nút đang chọn */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.gallery-item { margin: 0; }
+.gallery-item img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.gallery-item figcaption { padding: .4rem 0; font-size: .95rem; }
+.gallery-item.hidden { display: none; }        /* JavaScript thêm lớp này để ẩn ảnh */
+
+/* ===== LIÊN HỆ ===== */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+form label { display: block; font-weight: 500; margin-top: 1rem; }
+form input, form select, form textarea {
+  width: 100%; padding: .7rem; margin-top: .3rem;
+  border: 1px solid #9AA7BD; border-radius: 6px; font: inherit; background: var(--white);
+}
+form .btn { margin-top: 1.2rem; }
+.error { display: block; color: #B3261E; font-size: .9rem; min-height: 1.2em; } /* thông báo lỗi */
+#form-status { color: var(--navy); font-weight: 500; }
+.map { width: 100%; height: 280px; border: 0; border-radius: 6px; margin-top: .5rem; }
+
+/* ===== CHÂN TRANG ===== */
+.site-footer { background: var(--navy); color: var(--white); padding: 1.5rem 0; text-align: center; }
+.site-footer p { margin: 0; }
+
+/* ===== ĐIỆN THOẠI (màn hình rộng dưới 768px) ===== */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }             /* hiện nút ☰ */
+  .main-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: .5rem 4%; }
+  .main-nav.open { display: block; }           /* JavaScript thêm lớp open để mở menu */
+  .main-nav a { display: block; margin: 0; padding: .8rem 0; }
+  .contact-layout { grid-template-columns: 1fr; } /* biểu mẫu và bản đồ xếp chồng nhau */
+  .hero { padding: 4rem 0; }
+}
+
+/* Tôn trọng người dùng tắt hiệu ứng chuyển động */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

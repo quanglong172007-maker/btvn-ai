@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- lang="vi": báo cho trình duyệt đây là trang tiếng Việt -->
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"> <!-- UTF-8 giúp hiển thị đúng dấu tiếng Việt -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- cần thiết để hiển thị tốt trên điện thoại -->
+  <title>THPT Nguyễn Trường Tộ – Huế</title>
+
+  <!-- Phông chữ Be Vietnam Pro: thiết kế riêng cho tiếng Việt (cần có mạng) -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> <!-- defer: chạy sau khi trang đã tải xong -->
+</head>
+<body>
+
+  <!-- ===== THANH ĐIỀU HƯỚNG ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="logo">THPT Nguyễn Trường Tộ</a>
+
+      <!-- Nút ☰ chỉ hiện trên điện thoại (xem style.css và script.js) -->
+      <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="#about">Giới thiệu</a>
+        <a href="#admission">Tuyển sinh</a>
+        <a href="#gallery">Hoạt động</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== BANNER CHÍNH ===== -->
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Trường THPT Nguyễn Trường Tộ</h1>
+        <p>Nơi học sinh Cố đô Huế học tập, rèn luyện và trưởng thành.</p>
+        <!-- Nút kêu gọi hành động: cuộn xuống phần Tuyển sinh -->
+        <a href="#admission" class="btn">Xem thông tin tuyển sinh</a>
+      </div>
+    </section>
+
+    <!-- ===== GIỚI THIỆU ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Giới thiệu</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Lịch sử</h3>
+            <p>Văn bản mẫu: Trường được thành lập vào năm ..., qua nhiều thế hệ thầy và trò đã xây dựng truyền thống học tập nghiêm túc và gắn bó.</p>
+          </article>
+          <article class="card">
+            <h3>Sứ mệnh</h3>
+            <p>Văn bản mẫu: Giáo dục học sinh phát triển toàn diện về tri thức, đạo đức và kỹ năng sống, biết yêu quê hương Huế.</p>
+          </article>
+          <article class="card">
+            <h3>Cơ sở vật chất</h3>
+            <p>Văn bản mẫu: Phòng học khang trang, phòng thí nghiệm, thư viện, phòng tin học và sân thể thao.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TUYỂN SINH (đích của nút ở banner) ===== -->
+    <section id="admission" class="section section-tint">
+      <div class="container">
+        <h2>Thông tin tuyển sinh</h2>
+        <p class="lead">Văn bản mẫu: Nhà trường tuyển sinh vào lớp 10 theo kế hoạch của Sở Giáo dục và Đào tạo. Thời gian, chỉ tiêu và hồ sơ sẽ được cập nhật tại đây.</p>
+      </div>
+    </section>
+
+    <!-- ===== THƯ VIỆN ẢNH / HOẠT ĐỘNG NGOẠI KHÓA ===== -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Hoạt động ngoại khóa</h2>
+
+        <!-- Nút lọc: data-filter khớp với data-category của ảnh bên dưới -->
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Tất cả</button>
+          <button class="filter-btn" data-filter="su-kien">Sự kiện</button>
+          <button class="filter-btn" data-filter="cau-lac-bo">Câu lạc bộ</button>
+        </div>
+
+        <div class="gallery">
+          <!-- Ảnh giữ chỗ: sau này thay src bằng ảnh thật, ví dụ images/le-khai-giang.jpg -->
+          <figure class="gallery-item" data-category="su-kien">
+            <img src="https://placehold.co/600x400/0B2A5B/FFFFFF?text=Su+kien+1" alt="Ảnh sự kiện 1">
+            <figcaption>Lễ khai giảng</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="cau-lac-bo">
+            <img src="https://placehold.co/600x400/1D4E94/FFFFFF?text=CLB+1" alt="Ảnh câu lạc bộ 1">
+            <figcaption>Câu lạc bộ Âm nhạc</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="su-kien">
+            <img src="https://placehold.co/600x400/0B2A5B/FFFFFF?text=Su+kien+2" alt="Ảnh sự kiện 2">
+            <figcaption>Hội thao học sinh</figcaption>
+          </figure>
+          <figure class="gallery-item" data-category="cau-lac-bo">
+            <img src="https://placehold.co/600x400/1D4E94/FFFFFF?text=CLB+2" alt="Ảnh câu lạc bộ 2">
+            <figcaption>Câu lạc bộ Tiếng Anh</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIÊN HỆ ===== -->
+    <section id="contact" class="section section-tint">
+      <div class="container">
+        <h2>Liên hệ</h2>
+        <div class="contact-layout">
+
+          <!-- novalidate: để JavaScript tự kiểm tra và hiện thông báo tiếng Việt -->
+          <form id="contact-form" novalidate>
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+            <span class="error" data-for="name"></span>
+
+            <label for="role">Bạn là</label>
+            <select id="role" name="role">
+              <option>Phụ huynh</option>
+              <option>Học sinh</option>
+              <option>Giáo viên</option>
+              <option>Khác</option>
+            </select>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email">
+            <span class="error" data-for="email"></span>
+
+            <label for="message">Ý kiến hoặc thắc mắc</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <span class="error" data-for="message"></span>
+
+            <button type="submit" class="btn">Gửi liên hệ</button>
+            <p id="form-status" role="status"></p> <!-- nơi hiện thông báo sau khi gửi -->
+          </form>
+
+          <div>
+            <p><strong>Địa chỉ:</strong> (điền địa chỉ chính xác của trường), TP. Huế</p>
+            <p><strong>Điện thoại:</strong> 0234 xxx xxxx</p>
+            <p><strong>Email:</strong> thptnguyentruongto@example.com</p>
+
+            <!-- Bản đồ Google Maps: tìm theo tên trường -->
+            <iframe class="map" title="Bản đồ Trường THPT Nguyễn Trường Tộ, Huế"
+              src="https://www.google.com/maps?q=THPT%20Nguy%E1%BB%85n%20Tr%C6%B0%E1%BB%9Dng%20T%E1%BB%99%2C%20Hu%E1%BA%BF&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Năm được JavaScript điền tự động -->
+      <p>© <span id="year"></span> Trường THPT Nguyễn Trường Tộ, TP. Huế</p>
+    </div>
+  </footer>
+
+</body>
+</html>
